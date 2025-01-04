@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Của Tôi</title>
+    <style>
+        body {
+            background-color: #1a1c1e; /* Màu nền tối, bí ẩn */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0; 
+            overflow: hidden; 
+        }
 
+        h1 {
+            font-size: 3.5em; 
+            font-weight: bold;
+            color: #f0f0f0; 
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px; 
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px; 
+            font-size: 1em; /* Chữ nhỏ hơn */
+            border-radius: 30px; 
+            border: 2px solid #ffffff; 
+            background-color: rgba(255, 255, 255, 0.2); 
+            color: #1a1a1a; /* Màu chữ tối hơn */
+            text-decoration: none;
+            margin: 20px 0; /* Khoảng cách giữa các nút */
+            width: auto; 
+            max-width: 400px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+            position: relative;
+            overflow: hidden; /* Để tạo hình dạng đám mây */
+        }
+
+        .button:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 100%;
+            border-radius: 50px; /* Đường cong cho đám mây */
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%);
+            z-index: -1; /* Đặt phía sau chữ */
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.4); 
+            transform: translateY(-3px); 
+        }
+
+        .button:active {
+            transform: scale(0.95); 
+        }
+
+        footer {
+            font-family: 'Times New Roman', Times, serif; 
+            font-size: 1.1em; 
+            color: #f0f0f0; 
+            margin-top: auto; 
+            padding: 20px; 
+            opacity: 0.8; 
+        }
+
+        #contactForm {
+            display: none; 
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .icon {
+            font-size: 1.5em;
+            color: #3e2c1e; 
+            margin-right: 10px;
+        }
+
+        #overlay {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); 
+            z-index: 5;
+        }
+
+        .ok-button {
+            display: inline-block;
+            padding: 10px 5%; 
+            border-radius: 5px;
+            border: 2px solid #000000; 
+            background-color: transparent; 
+            color: #000000; 
+            text-decoration: none;
+            margin-top: 15px;
+            width: auto; 
+            max-width: 400px; 
+            transition: background-color 0.3s, transform 0.1s; 
+            text-align: center; 
+        }
+
+        .ok-button:hover {
+            background-color: rgba(0, 0, 0, 0.1); 
+        }
+
+        .ok-button:active {
+            transform: scale(0.95); 
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        input {
+            border: none;
+            background: none;
+            color: #3e2c1e; 
+            font-size: 1.2em; 
+            width: 60%; 
+            pointer-events: none; 
+        }
+    </style>
+</head>
+<body>
+    <h1>hello!</h1>
+    <a href="https://youtube.com/@licnv?si=qSfUWamW3sZFqrDZ" class="button">nghe nhạc cùng tôi</a>
+    <a href="#" class="button" onclick="toggleContactForm()">thông tin liên hệ khác</a>
+    <a href="YOUR_NEW_LINK_HERE" class="button">Chuyển đến liên kết mới</a> <!-- Nút mới -->
+
+    <div id="overlay"></div>
+    
+    <div id="contactForm">
+        <h2>thông tin liên hệ</h2>
+        <div class="contact-item">
+            <span class="icon">📞</span>
+            <input type="text" value="0397431617" id="phone" readonly>
+        </div>
+        <div class="contact-item">
+            <span class="icon">✉️</span>
+            <input type="text" value="cnv.better@gmail.com" id="email" readonly>
+        </div>
+        <a href="#" class="ok-button" onclick="toggleContactForm()">OK</a>
+    </div>
+
+    <footer>tôi là Vũ.</footer>
+
+    <script>
+        function toggleContactForm() {
+            const form = document.getElementById('contactForm');
+            const overlay = document.getElementById('overlay');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+            overlay.style.display = overlay.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+  </html>
